@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+.title_container {
+    display: block;
+    width: auto;
+    height: 98px;
+    padding: 200px 0px 200px 0px;
+}
+
+#title {
+    margin: 0;
+    text-align: center;
+    font-size: 80px;
+}
