@@ -55,14 +55,20 @@ body {
 }
 
 .main_container {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: auto;
-    height: 75px;
     padding-left: 400px;
 }
 
 .main_container #welcome {
+    display: block;
     margin: 150px 100px 0 100px;
     color: #222;
     font-size: 22px;
+}
+
+#warning {
+    display: block;
+    padding-left: 100px;
 }
