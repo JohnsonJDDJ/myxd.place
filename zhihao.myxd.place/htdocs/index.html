@@ -25,7 +25,14 @@
                 degree in Statistics and Computer Science. I love to play with data, do some analysis, and draw some insights. 
                 This website is a showcase for some of my personal projects that I have completed 
                 in the past. For other experiences, please refer to my resume.</p>
+            <!-- Table of Contents -->
             <div class="project_container">
+                <button type="button" class="collapsible">Table of Contents</button>
+                <div class="toc_content">
+                    <p class="toc_link">Project: <a href="#MineRift">MineRift</a> (2018 - 2019).</p>
+                </div>
+            </div>
+            <div class="project_container" id="MineRift">
                 <p class="project_title">MineRift</p>              
                 <div class="project_content_container">
                     <div class="project_links_container">
@@ -117,6 +124,24 @@
 </html>
 
 <script>
+    // Collapsible variables
+    var coll = document.getElementsByClassName("collapsible");
+    var coll_index;
+
+    // Add Event Listener to Collapsibles
+    for (coll_index = 0; coll_index < coll.length; coll_index++) {
+        coll[coll_index].addEventListener("click", function() {
+            this.classList.toggle("active_coll");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+
+    // Slide Show Variables
     let slideIndex = 1;
     showSlides(slideIndex);
 

@@ -71,6 +71,43 @@ a {color: inherit;}
 }
 
 /* ==================
+   ====== TOC =======
+   ================== */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    cursor: pointer;
+    background-color: white;
+    padding: 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: Verdana, sans-serif;
+    border-style: solid;
+    border-color: #999;
+    border-width: 0 0 2px 0;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.toc_content {
+    display: none;
+    overflow: hidden;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 26px;
+    float: right;
+    margin-left: 5px;
+  }
+  
+.active_coll:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* ==================
    ==== PROJECTS ====
    ================== */
 
@@ -85,9 +122,9 @@ a {color: inherit;}
     margin: 0px;
     font-size: 26px;
     font-weight: bold;
-    border-style: none none solid none;
+    border-style: solid;
     border-color: #999;
-    border-width: 2px;
+    border-width: 0 0 2px 0;
 }
 
 .project_links_container {
