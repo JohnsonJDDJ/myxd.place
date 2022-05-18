@@ -127,12 +127,20 @@ a {color: inherit;}
     border-width: 0 0 2px 0;
 }
 
-.project_links_container {
+.project_links_container, .project_tags_container {
     display: flex;
     flex-direction: row;
 }
 
 .project_link {margin: 5px 15px 5px 0px;}
+
+.project_tag {
+    margin: 0px 15px 0px 0px;
+    padding: 5px;
+    font-size: 14px;
+    border: #222 solid;
+    border-radius: 10px;
+}
 
 /* Slideshow container */
 .slideshow-container {
