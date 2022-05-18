@@ -32,8 +32,110 @@
                         <p class="project_link">Github: <a href="https://github.com/JohnsonJDDJ/MineRift" target="_blank"><i class="fa fa-github" style="font-size:17px"></i></a></p>
                         <p class="project_link">Showcase Video: <a href="https://www.youtube.com/watch?v=9akLPq117yI" target="_blank"><i class="fa-brands fa-youtube" style="font-size:17px"></i></a></p>
                     </div>
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 10</div>
+                            <img src="images/rift_birdeye_1.png" style="width:100%">
+                            <div class="text">Summoner's Rift Bird View</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 10</div>
+                            <img src="images/rift_lobby.png" style="width:100%">
+                            <div class="text">Lobby</div>
+                        </div>               
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="images/rift_red_creature.png" style="width:100%">
+                            <div class="text">Jungle 1</div>
+                        </div>    
+                        <div class="mySlides fade">
+                            <div class="numbertext">4 / 3</div>
+                            <img src="images/rift_witches.png" style="width:100%">
+                            <div class="text">Jungle 2</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">5 / 10</div>
+                            <img src="images/rift_inferno.png" style="width:100%">
+                            <div class="text">Jungle 3</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">6 / 10</div>
+                            <img src="images/rift_mid_lane.png" style="width:100%">
+                            <div class="text">Mid Lane</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">7 / 10</div>
+                            <img src="images/rift_red_nexus.png" style="width:100%">
+                            <div class="text">Red Nexus</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">8 / 10</div>
+                            <img src="images/rift_blue_nexus.png" style="width:100%">
+                            <div class="text">Blue Nexus</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">9 / 10</div>
+                            <img src="images/rift_nexus_inside.png" style="width:100%">
+                            <div class="text">Inside the Nexus</div>
+                        </div> 
+                        <div class="mySlides fade">
+                            <div class="numbertext">10 / 10</div>
+                            <img src="images/rift_choose_hero.png" style="width:100%">
+                            <div class="text">Choose your Hero</div>
+                        </div>                  
+                        <!-- Next and previous butåtons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            <span class="dot" onclick="currentSlide(6)"></span>
+                            <span class="dot" onclick="currentSlide(7)"></span>
+                            <span class="dot" onclick="currentSlide(8)"></span>
+                            <span class="dot" onclick="currentSlide(9)"></span>
+                            <span class="dot" onclick="currentSlide(10)"></span>
+                        </div>
                 </div>
             </div>   
         </div>
     </body>
 </html>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
