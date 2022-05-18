@@ -3,9 +3,7 @@ body {
     font-family: Verdana, sans-serif;
 }
 
-a {
-    color: inherit;
-}
+a {color: inherit;}
 
 .sidenav {
     height: 100%;
@@ -67,12 +65,36 @@ a {
 
 .main_container #welcome {
     display: block;
-    margin: 150px 100px 0 100px;
+    margin: 150px 100px 150px 100px;
     color: #222;
     font-size: 22px;
 }
 
-#warning {
-    display: block;
-    padding-left: 100px;
+/* ==================
+   ==== PROJECTS ====
+   ================== */
+
+.project_container{
+    margin: 20px 50px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.project_title {
+    margin: 0px;
+    font-size: 26px;
+    font-weight: bold;
+    border-style: none none solid none;
+    border-color: #999;
+    border-width: 2px;
+}
+
+.project_links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.project_link {
+    margin: 5px 15px 5px 0px;
 }
