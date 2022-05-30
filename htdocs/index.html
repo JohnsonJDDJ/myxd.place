@@ -13,11 +13,11 @@
             <a href="#">Clients</a>
             <a href="#">Contact</a>
         </div>
-        <div class="psuedomain">
-            <div class="outer_sidenav">
+        <div id="psuedomain">
+            <div id="outer_sidenav">
                 <img id="sidenav_logo" src="logos/logo_transparent.png" onclick="openNav()">
             </div>
-            <div class="main" >
+            <div id="main" >
                 <div class="title_container">
                     <p id="title">www.myxd.place</p>
                 </div>
@@ -25,3 +25,21 @@
         </div>
     </body>
 </html>
+
+<script>   
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "150px";
+  document.getElementById("outer_sidenav").style.left = "150px";
+  document.getElementById("psuedomain").style.marginLeft = "150px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("outer_sidenav").style.left = "0";
+  document.getElementById("psuedomain").style.marginLeft = "0";
+}
+
+</script>

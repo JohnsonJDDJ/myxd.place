@@ -10,7 +10,7 @@ body {
 **/
 
 /* The outer side navigation menu that stays on page*/
-.outer_sidenav {
+#outer_sidenav {
     height: 100%;
     width: 80px;
     position: fixed;
@@ -19,12 +19,14 @@ body {
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    border: #111 solid 1px;
+    box-shadow: 4px 0px 5px 0px #bbb;
+    transition: 0.5s;
 }
 
 #sidenav_logo {
     width: 60px;
     padding: 10px;
+    cursor: pointer;
 }
 
 /* The side navigation menu */
@@ -35,11 +37,29 @@ body {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    right: 5px;
+    font-size: 28px;
+}
 
 /** 
     =============
@@ -47,11 +67,11 @@ body {
     =============
 **/
 
-.psuedomain {
+#psuedomain {
     transition: margin-left 0.5s;
 }
 
-.main {
+#main {
     margin-left: 80px;
 }
 
