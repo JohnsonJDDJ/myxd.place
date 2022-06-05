@@ -21,8 +21,13 @@ body {
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeue.ttf");
+  font-family: "Helvetica Neue UL";
+  src: url("../fonts/HelveticaNeue-UltraLight.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica Neue T";
+  src: url("../fonts/HelveticaNeue-Thin.ttf");
 }
 
 /**
@@ -172,4 +177,9 @@ body {
     text-align: center;
     font-family: "Prata";
     font-size: 36px;
+}
+
+.item_text {
+    font-family: "Helvetica Neue T";
+    font-size: 20px;
 }
