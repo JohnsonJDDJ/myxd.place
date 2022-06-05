@@ -15,6 +15,16 @@ body {
     }
 }
 
+@font-face {
+  font-family: "Prata";
+  src: url("../fonts/Prata-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue.ttf");
+}
+
 /**
     =============
     == SideNav ==
@@ -116,18 +126,50 @@ body {
 }
 
 #main {
+    position: relative;
     margin-left: 80px;
 }
 
 #logo_container {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
     display: block;
-    width: auto;
+    width: 100%;
+    padding: 200px 0 200px 0;
     height: 200px;
-    padding-top: 200px;
 }
 
 #main_logo {
     height: 200px;
     display: block;
     margin: auto;
+}
+
+/**
+    =====================
+    ==== Gallery Item ===
+    =====================
+**/
+
+.gallery_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: white;
+    opacity: 0.95;
+}
+
+.gallery_item {
+    height: 2000px;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.item_title {
+    text-align: center;
+    font-family: "Prata";
+    font-size: 36px;
 }
