@@ -17,24 +17,69 @@
                 <p id="info">Pronouns: He/His/Him</p>
                 <p id="info">Preferred Name: Johnson</p>
                 <p id="info">Contact: zhihao617@berkeley.edu</p>
-                <p id="info">Resume: <a href="./files/resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="font-size:17px"></i></a></p> 
+                <p id="info">Resume: <a href="./files/resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="font-size:17px"></i></a></p>
                 <p id="info">Github: <a href="https://github.com/JohnsonJDDJ" target="_blank"><i class="fa fa-github" style="font-size:17px"></i></a></p>
             </div>
         </div>
         <div class="main_container">
-            <p id="welcome">Welcome! I am a student at University of California, Berkeley, pursuing bachelor's 
-                degree in Statistics and Computer Science. I love to play with data, do some analysis, and draw some insights. 
-                This website is a showcase for some of my personal projects that I have completed 
+            <p id="welcome">Welcome! I am a student at University of California, Berkeley, pursuing bachelor's
+                degree in Statistics and Computer Science. I love to play with data, do some analysis, and draw some insights.
+                This website is a showcase for some of my personal projects that I have completed
                 in the past. For other experiences, please refer to my resume.</p>
             <!-- Table of Contents -->
             <div class="project_container">
                 <button type="button" class="collapsible">Table of Contents</button>
                 <div class="toc_content">
-                    <p class="toc_link">Game Dev: <a href="#MineRift">MineRift</a> (2018 - 2019).</p>
+                    <p class="toc_link">Python Package: <a href="#zilean">zilean</a> (05/2022 - Now). Machine learning for League of Legends.</p>
+                    <p class="toc_link">Data Science: <a href="#">Forest Fire Prediction</a> (04/2022 - 05/2022). Reproducible data science.</p>
+                    <p class="toc_link">Data Science: <a href="#HOYO_Lab">HOYO Lab</a> (03/2021 - 08/2021). Modeling with R and R ShinyApp.</p>
+                    <p class="toc_link">Game Dev: <a href="#MineRift">MineRift</a> (2018 - 2019). Minigame in Minecraft.</p>
+                </div>
+            </div>
+            <div class="project_container" id="zilean">
+                <p class="project_title">zilean</p>
+                <div class="project_content_container">
+                    <div class="project_links_container">
+                      <p class="project_link">Github: <a href="https://github.com/JohnsonJDDJ/zilean" target="_blank"><i class="fa fa-github" style="font-size:17px"></i></a></p>
+                    </div>
+                    <div class="project_tags_container">
+                        <p class="project_tag">Python</p>
+                        <p class="project_tag">Python Package</p>
+                        <p class="project_tag">Machine Learning</p>
+                        <p class="project_tag">Riot API</p>
+                        <p class="project_tag">League of Legends</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project_container" id="HOYO_Lab">
+                <p class="project_title">HOYO Lab</p>
+                <div class="project_content_container">
+                    <div class="project_links_container">
+                        <p class="project_link">Web App (in Chinese): <a href="https://zhihao617.shinyapps.io/genshin_basic_damage_calculator/" target="_blank"><i class="fa-brands fa-r-project" style="font-size:17px"></i></a></p>
+                    </div>
+                    <div class="project_tags_container">
+                        <p class="project_tag">R</p>
+                        <p class="project_tag">R ShinyApp</p>
+                        <p class="project_tag">Machine Learning</p>
+                        <p class="project_tag">Genshin Impact</p>
+                    </div>
+                    <p>This is a basic machine learning project that tries to predict the "damage calculation
+                       algorithm" in Genshin Impact, a game developed by miHoYo. I started playing the game
+                       shortly after the release and fell in love with the game quickly. As the game develops,
+                       I am intrigued with improving my performance (maximize the damage I deal to enemies)
+                       to the finest levels. Thus, I began this project
+                       to figure out how to maximize my damage with the equipmemts I currently have.</p>
+                    <p>Through repeated in-game simulations, I collected data from the game and built a basic linear
+                       model to predict my damage using R. The result model is showcased through R ShinyApp (link above).
+                       I used this model and wrote some <a href="https://bbs.mihoyo.com/ys/article/5664071" target="_blank">game tutorials</a>
+                       that received 400,000+ views on the game's Chinese forum.</p>
+                    <p>* Since I began this project purely out of my interest to the game, I am totally unaware
+                       of perserving the code and the data at the beginning. The only code I currently have is
+                       the code for the ShinyApp.</p>
                 </div>
             </div>
             <div class="project_container" id="MineRift">
-                <p class="project_title">MineRift</p>              
+                <p class="project_title">MineRift</p>
                 <div class="project_content_container">
                     <div class="project_links_container">
                         <p class="project_link">Github: <a href="https://github.com/JohnsonJDDJ/MineRift" target="_blank"><i class="fa fa-github" style="font-size:17px"></i></a></p>
@@ -46,11 +91,11 @@
                         <p class="project_tag">Minecraft</p>
                         <p class="project_tag">League of Legends</p>
                     </div>
-                    <p>This project is a Minecraft minimap that imitates the Summoner's Rift of the MOBA game League of Legends, developed by Riot 
-                        Games. This project is developed during high school, during my class time (mostly) and free time (some). 
-                        I revisited this map and was pretty amazed by the effort I put in back then. I think this project deserves some 
+                    <p>This project is a Minecraft minimap that imitates the Summoner's Rift of the MOBA game League of Legends, developed by Riot
+                        Games. This project is developed during high school, during my class time (mostly) and free time (some).
+                        I revisited this map and was pretty amazed by the effort I put in back then. I think this project deserves some
                         respect, so I made a showcase video and a Github repo to mark its existence in the history of the internet.</p>
-                    <p>The whole idea is to play League of Legends in Minecraft (this project is literally created because I can't play league in high school but I can 
+                    <p>The whole idea is to play League of Legends in Minecraft (this project is literally created because I can't play league in high school but I can
                         play minecraft). But, the game, as it develops, is now very different from League.</p>
                     <p>I strongly recommend checking our the showcase video. For more information and installation, checkout the github link.</p>
                     <!-- Slideshow container -->
@@ -65,12 +110,12 @@
                             <div class="numbertext">2 / 10</div>
                             <img src="images/rift_lobby.png" style="width:100%">
                             <div class="image_caption">Lobby</div>
-                        </div>               
+                        </div>
                         <div class="mySlides fade">
                             <div class="numbertext">3 / 10</div>
                             <img src="images/rift_red_creature.png" style="width:100%">
                             <div class="image_caption">Jungle 1</div>
-                        </div>    
+                        </div>
                         <div class="mySlides fade">
                             <div class="numbertext">4 / 10</div>
                             <img src="images/rift_witches.png" style="width:100%">
@@ -100,12 +145,12 @@
                             <div class="numbertext">9 / 10</div>
                             <img src="images/rift_nexus_inside.png" style="width:100%">
                             <div class="image_caption">Inside the Nexus</div>
-                        </div> 
+                        </div>
                         <div class="mySlides fade">
                             <div class="numbertext">10 / 10</div>
                             <img src="images/rift_choose_hero.png" style="width:100%">
                             <div class="image_caption">Choose your Hero</div>
-                        </div>                  
+                        </div>
                         <!-- Next and previous butåtons -->
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -125,7 +170,7 @@
                             <span class="dot" onclick="currentSlide(10)"></span>
                         </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </body>
 </html>
