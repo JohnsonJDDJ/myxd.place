@@ -177,7 +177,8 @@ body {
 }
 
 .gallery_item {
-    height: 2000px;
+    display: flex;
+    flex-direction: column;
     width: auto;
     margin-left: 15%;
     margin-right: 15%;
