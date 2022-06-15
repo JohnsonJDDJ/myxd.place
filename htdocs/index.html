@@ -49,45 +49,37 @@
                         折磨坐在秋千上的人。
                         </p>
                         <!-- Slideshow container -->
-                        <div class="slideshow-container">
+                        <div class="slideshow-container" id="treehouse">
                             <!-- Full-width images with number and caption text -->
                             <div class="mySlides fade">
-                                <div class="numbertext">1 / 10</div>
+                                <div class="numbertext" style="color: #222">1 / 5</div>
                                 <img src="images/treehouse_1.jpg" style="width:100%">
-                                <div class="image_caption">Summoner's Rift Bird View</div>
+                                <div class="image_caption">Treehouse front view</div>
                             </div>
                             <div class="mySlides fade">
-                                <div class="numbertext">2 / 10</div>
+                                <div class="numbertext" style="color: #222">2 / 5</div>
                                 <img src="images/treehouse_2.jpg" style="width:100%">
-                                <div class="image_caption">Lobby</div>
+                                <div class="image_caption">Treehouse back view</div>
                             </div>
                             <div class="mySlides fade">
-                                <div class="numbertext">3 / 10</div>
+                                <div class="numbertext" style="color: #222">3 / 5</div>
                                 <img src="images/treehouse_3.jpg" style="width:100%">
-                                <div class="image_caption">Jungle 1</div>
+                                <div class="image_caption">Children's bedroom</div>
                             </div>
                             <div class="mySlides fade">
-                                <div class="numbertext">4 / 10</div>
+                                <div class="numbertext" style="color: #222">4 / 5</div>
                                 <img src="images/treehouse_4.jpg" style="width:100%">
-                                <div class="image_caption">Jungle 2</div>
+                                <div class="image_caption">Main bedroom</div>
                             </div>
-                            <div class="mySlides fade">
-                                <div class="numbertext">5 / 10</div>
+                            <div class="mySlides fade" style="color: #222">
+                                <div class="numbertext">5 / 5</div>
                                 <img src="images/treehouse_5.jpg" style="width:100%">
-                                <div class="image_caption">Jungle 3</div>
+                                <div class="image_caption">Bathroom</div>
                             </div>
                             <!-- Next and previous butåtons -->
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-                        <!-- The dots/circles -->
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                            <span class="dot" onclick="currentSlide(4)"></span>
-                            <span class="dot" onclick="currentSlide(5)"></span>
-                        </div>
+                            <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
+                            <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
+                        </div>       
                     </div>
                     <div class="gallery_item" id="norcal_2022">
                         <p class="item_title">NorCal Road Trip 2022</p>
@@ -125,6 +117,7 @@
     </body>
 </html>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
@@ -141,34 +134,52 @@ function closeNav() {
   document.getElementById("psuedomain").style.marginLeft = "0";
 }
 
-// Slide Show Variables
-let slideIndex = 1;
-showSlides(slideIndex);
+// ======================
+// Slider Functionalities
+// ======================
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+var sliderObjects = [];
+createSliderObjects();
+
+function plusDivs(obj, n) {
+  var parentDiv = $(obj).parent();
+  var matchedDiv;
+  $.each(sliderObjects, function(i, item) {
+    if ($(parentDiv[0]).attr('id') == $(item).attr('id')) {
+      matchedDiv = item;
+      return false;
+    }
+  });
+  matchedDiv.slideIndex=matchedDiv.slideIndex+n;
+  showDivs(matchedDiv, matchedDiv.slideIndex);
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+function createSliderObjects() {
+  var sliderDivs = $('.slideshow-container');
+  $.each(sliderDivs, function(i, item) {
+    var obj = {};
+    obj.id = $(item).attr('id');
+    obj.divContent = item;
+    obj.slideIndex = 1;
+    obj.slideContents = $(item).find('.mySlides');
+    showDivs(obj, 1);
+    sliderObjects.push(obj);
+  });
 }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+function showDivs(divObject, n) {
+  debugger;
+  var i;
+  if (n > divObject.slideContents.length) {
+    divObject.slideIndex = 1
+  }
+  if (n < 1) {
+    divObject.slideIndex = divObject.slideContents.length
+  }
+  for (i = 0; i < divObject.slideContents.length; i++) {
+    divObject.slideContents[i].style.display = "none";
+  }
+  divObject.slideContents[divObject.slideIndex - 1].style.display = "block";
 }
 
 </script>
