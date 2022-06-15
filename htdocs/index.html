@@ -36,7 +36,58 @@
                         <p class="item_title">The Lego Treehouse</p>
                         <p class="item_date">2022 May</p>
                         <p class="item_description">Our first Lego project to kick off summer.</p>
-                        <p class="item_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p class="item_text">Our's, and also Mikee's, first Lego project. After a long struggle
+                        to choose between the Treehouse and the Typewriter, we think that the Treehouse is
+                        more aesthetically pleasing (even though it might cause great trouble when we move).</p>
+                        <p class="item_text">With the accompaniment of《向往的生活》and《乘风破浪的姐姐》, building
+                        the Treehouse felt like a breeze. 曾鸣麒巨急, suggests that we should build simultaneously. 
+                        But clearly the Treehouse is unable to be built simultaneously. So we divided our role to be
+                        builders and finders, but we constantly want to take over other's responsibility. 只能说，好胜心很强。
+                        </p>
+                        <p class="item_text">We are quite amazed by the details in this Treehouse. The hidden
+                        treasure, the treasure map on the bunk bed...But Johnson's favorite thing to do is to
+                        折磨坐在秋千上的人。
+                        </p>
+                        <!-- Slideshow container -->
+                        <div class="slideshow-container">
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 10</div>
+                                <img src="images/treehouse_1.jpg" style="width:100%">
+                                <div class="image_caption">Summoner's Rift Bird View</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 10</div>
+                                <img src="images/treehouse_2.jpg" style="width:100%">
+                                <div class="image_caption">Lobby</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 10</div>
+                                <img src="images/treehouse_3.jpg" style="width:100%">
+                                <div class="image_caption">Jungle 1</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">4 / 10</div>
+                                <img src="images/treehouse_4.jpg" style="width:100%">
+                                <div class="image_caption">Jungle 2</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">5 / 10</div>
+                                <img src="images/treehouse_5.jpg" style="width:100%">
+                                <div class="image_caption">Jungle 3</div>
+                            </div>
+                            <!-- Next and previous butåtons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
                     </div>
                     <div class="gallery_item" id="norcal_2022">
                         <p class="item_title">NorCal Road Trip 2022</p>
@@ -88,6 +139,36 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("outer_sidenav").style.left = "0";
   document.getElementById("psuedomain").style.marginLeft = "0";
+}
+
+// Slide Show Variables
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
 }
 
 </script>
