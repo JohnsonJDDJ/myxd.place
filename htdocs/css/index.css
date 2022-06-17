@@ -211,6 +211,12 @@ body {
     margin: 10px 0;
 }
 
+/**
+    ===================
+    ==== Slide Show ===
+    ===================
+**/
+
 /* Slideshow container */
 .slideshow-container {
     width: 50%;
@@ -248,7 +254,6 @@ body {
 /* Caption text */
 .image_caption {
     box-sizing: border-box;
-    color: #f2f2f2;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -264,3 +269,11 @@ body {
     position: absolute;
     top: 0;
 }
+
+/* Color options for caption and numbertext */
+.tall .image_caption {color: white; text-shadow: 0 0 2px black;}
+.tall .numbertext {color: black}
+.wide .image_caption {color: black}
+.wide .numbertext {color: black}
+.square .image_caption {color: white; text-shadow: 0 0 2px black;}
+.square .numbertext {color: white; text-shadow: 0 0 2px black;}
