@@ -172,8 +172,7 @@ body {
     display: flex;
     flex-direction: column;
     width: auto;
-    background-color: white;
-    opacity: 0.95;
+    background-color: rgb(255,255,255,0.9)
 }
 
 .gallery_item {
