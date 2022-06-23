@@ -172,7 +172,7 @@ body {
     display: flex;
     flex-direction: column;
     width: auto;
-    background-color: rgb(255,255,255,0.9)
+    background-color: rgb(255,255,255,0.95)
 }
 
 .gallery_item {
