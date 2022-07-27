@@ -69,6 +69,28 @@ a {color: inherit;}
    ====== MAIN ======
    ==================*/
 
+#toTopButton {
+    display: none;
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 99; 
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #ddd;
+    color: #999;
+    cursor: pointer;
+    padding: 20px 10px;
+    font-size: 18px;
+}
+
+#toTopButton:hover{
+    color: #222;
+}
+
 .main_container {
     display: flex;
     flex-direction: column;
