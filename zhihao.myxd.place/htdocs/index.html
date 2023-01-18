@@ -158,7 +158,7 @@
                         play minecraft). But, the game, as it develops, is now very different from League.</p>
                     <p>I strongly recommend checking our the showcase video. For more information and installation, checkout the github link.</p>
                     <!-- Slideshow container -->
-                    <div class="slideshow-container">
+                    <div class="slideshow-container", id="MineRift_slides">
                         <!-- Full-width images with number and caption text -->
                         <div class="mySlides fade">
                             <div class="numbertext">1 / 10</div>
@@ -211,22 +211,8 @@
                             <div class="image_caption">Choose your Hero</div>
                         </div>
                         <!-- Next and previous butåtons -->
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <br>
-                    <!-- The dots/circles -->
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
-                        <span class="dot" onclick="currentSlide(5)"></span>
-                        <span class="dot" onclick="currentSlide(6)"></span>
-                        <span class="dot" onclick="currentSlide(7)"></span>
-                        <span class="dot" onclick="currentSlide(8)"></span>
-                        <span class="dot" onclick="currentSlide(9)"></span>
-                        <span class="dot" onclick="currentSlide(10)"></span>
+                        <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
+                        <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
                     </div>
                 </div>
             </div>
@@ -234,72 +220,102 @@
     </body>
 </html>
 
+<!-- This is required for slideshow to work properly -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    // Collapsible variables
-    var coll = document.getElementsByClassName("collapsible");
-    var coll_index;
 
-    // Add Event Listener to Collapsibles
-    for (coll_index = 0; coll_index < coll.length; coll_index++) {
-        coll[coll_index].addEventListener("click", function() {
-            this.classList.toggle("active_coll");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
+// ===========================
+// Collapsible Functionalities
+// ===========================
 
-    // Slide Show Variables
-    let slideIndex = 1;
-    showSlides(slideIndex);
+// Collapsible variables
+var coll = document.getElementsByClassName("collapsible");
+var coll_index;
 
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+// Add Event Listener to Collapsibles
+for (coll_index = 0; coll_index < coll.length; coll_index++) {
+    coll[coll_index].addEventListener("click", function() {
+        this.classList.toggle("active_coll");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
+    });
+}
 
-    // Scroll to top button
-    // Get the butto
-    toTopButton = document.getElementById("toTopButton");
+// ======================
+// Slider Functionalities
+// ======================
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {showToTopButton()};
+var sliderObjects = [];
+createSliderObjects();
 
-    function showToTopButton() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        toTopButton.style.display = "block";
-    } else {
-        toTopButton.style.display = "none";
+// Arrows on each side to change slides
+function plusDivs(obj, n) {
+  var parentDiv = $(obj).parent();
+  var matchedDiv;
+  $.each(sliderObjects, function(i, item) {
+    if ($(parentDiv[0]).attr('id') == $(item).attr('id')) {
+      matchedDiv = item;
+      return false;
     }
-    }
+  });
+  matchedDiv.slideIndex=matchedDiv.slideIndex+n;
+  showDivs(matchedDiv, matchedDiv.slideIndex);
+}
 
-    // When the user clicks on the button, scroll to the top of the document
-    function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
+function createSliderObjects() {
+  var sliderDivs = $('.slideshow-container');
+  $.each(sliderDivs, function(i, item) {
+    var obj = {};
+    obj.id = $(item).attr('id');
+    obj.divContent = item;
+    obj.slideIndex = 1;
+    obj.slideContents = $(item).find('.mySlides');
+    showDivs(obj, 1);
+    sliderObjects.push(obj);
+  });
+}
+
+function showDivs(divObject, n) {
+  debugger;
+  var i;
+  if (n > divObject.slideContents.length) {
+    divObject.slideIndex = 1
+  }
+  if (n < 1) {
+    divObject.slideIndex = divObject.slideContents.length
+  }
+  for (i = 0; i < divObject.slideContents.length; i++) {
+    divObject.slideContents[i].style.display = "none";
+  }
+  divObject.slideContents[divObject.slideIndex - 1].style.display = "block";
+}
+
+// ====================
+// Scroll-to-top Button
+// ====================
+
+// Get the button
+toTopButton = document.getElementById("toTopButton");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {showToTopButton()};
+
+function showToTopButton() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    toTopButton.style.display = "block";
+} else {
+    toTopButton.style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 </script>
