@@ -32,6 +32,11 @@
   src: url("../fonts/CarroisGothicSC-Regular.ttf");
 }
 
+@font-face {
+    font-family: "NotoSerif";
+    src: url("../fonts/NotoSerifSC-ExtraLight.otf");
+  }
+
 body {
     margin: 0;
     font-family: "Main";
@@ -205,7 +210,7 @@ body {
 }
 
 .item_text {
-    font-family: "Helvetica Neue T";
+    font-family: "NotoSerif";
     font-size: 20px;
     margin: 10px 0;
 }
